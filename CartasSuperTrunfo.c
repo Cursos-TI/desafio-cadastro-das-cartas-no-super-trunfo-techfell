@@ -1,13 +1,8 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+int main(){
 
-int main() {
-     // Variaveis para a Primeira Carta
+    // Variaveis para a Primeira Carta
     char estadoA[20];
     char codigoA[20];
     char nomeCidadeA[20];
@@ -15,6 +10,9 @@ int main() {
     float kmA;
     float pibA;
     int pontosTuriscticosA;
+    float densidadePopulacionalA;
+    float pibPerCapitaA;
+
     
 
     // Variaveis para a segunda Carta
@@ -25,27 +23,34 @@ int main() {
     float kmB;
     float pibB;
     int PontosTuriscticosB;
+    float densidadePopulacionalB;
+    float pibPerCapitaB;
 
     printf("VAMOS INSERIR OS DADOS DA PRIMEIRA CARTA:\n ");
 
     // Inserção de Dados na primeira Carta
     printf("Digite uma letra de A a H para representar a sua carta; Exemplo F: ");
-    scanf("%s", estadoA, "\n");
-    printf("Digite a letra do Estado mais um numero de 01 a 04. Exemplo F03: ");
-    scanf("%s", codigoA, "\n");
-    printf("Digite o nome da Cidade: ");
-    scanf("%s", nomeCidadeA, "\n");
-    printf("Digite o numero TOTAL de habitantes na cidade: ");
-    scanf("%i", &populacaoA, "\n");
-    printf("Digite a Area em KM2; Exemplo 1528.76: ");
-    scanf("%f", &kmA, "\n");
-    printf("Digite o PIB (Produto Interno Bruto) da cidade em Bilhoes; Exemplo 187.87: ");
-    scanf("%f", &pibA, "\n");
-    printf("Digite a quantidade de Pontos Turisticos a cidade possui: ");
-    scanf("%i", &pontosTuriscticosA, "\n");
+    scanf("%s", estadoA);
+    printf("\n Digite a letra do Estado mais um numero de 01 a 04. Exemplo F03: ");
+    scanf("%s", codigoA);
+    printf("\n Digite o nome da Cidade: ");
+    scanf("%s", nomeCidadeA);
+    printf("\n Digite o numero TOTAL de habitantes na cidade: ");
+    scanf("%i", &populacaoA);
+    printf("\nDigite a Area em KM2; Exemplo 1528.76: ");
+    scanf("%f", &kmA);
+    printf("\n Digite o PIB (Produto Interno Bruto) da cidade em Bilhoes; Exemplo 187.87: ");
+    scanf("%f", &pibA);
+    printf("\nDigite a quantidade de Pontos Turisticos a cidade possui: ");
+    scanf("%i", &pontosTuriscticosA);
+
+    // Calculo da Densidade e do PIB per Capita
+
+    densidadePopulacionalA = (populacaoA / kmA);
+    pibPerCapitaA = (pibA / populacaoA);
 
     // Leitura da Primeira Carta Inserida
-    printf("\n\n Carta 1 \n");
+    printf("\n\n\n Carta 1 \n");
     printf("Estado: %s \n", estadoA);
     printf("Código: %s \n", codigoA);
     printf("Nome da Cidade: %s \n", nomeCidadeA);
@@ -53,27 +58,34 @@ int main() {
     printf("Área: %f Km2 \n", kmA);
     printf("PIB: %f Bilhões de Reais \n", pibA);
     printf("Numero de Pontos Turisticos: %i \n", pontosTuriscticosA);
+    printf("Densidade Populacional: %f \n", densidadePopulacionalA);
+    printf("PIB per Capita: %f \n", pibPerCapitaA);
 
-    printf("\n\nVAMOS INSERIR OS DADOS DA SEGUNDA CARTA:\n ");
+    printf("VAMOS INSERIR OS DADOS DA SEGUNDA CARTA:\n ");
 
     // Inserção de Dados na segunda carta
     printf("Digite uma letra de A a H para representar a sua carta; Exemplo F: ");
-    scanf("%s", estadoB, "\n");
-    printf("Digite a letra do Estado mais um numero de 01 a 04. Exemplo F03: ");
-    scanf("%s", codigoB, "\n");
-    printf("Digite o nome da Cidade: ");
-    scanf("%s", nomeCidadeB, "\n");
-    printf("Digite o numero TOTAL de habitantes na cidade: ");
-    scanf("%i", &populacaoB, "\n");
-    printf("Digite a Area em KM2; Exemplo 1528.76: ");
-    scanf("%f", &kmB, "\n");
-    printf("Digite o PIB (Produto Interno Bruto) da cidade em Bilhoes; Exemplo 187.87: ");
-    scanf("%f", &pibB, "\n");
-    printf("Digite a quantidade de Pontos Turisticos a cidade possui: ");
-    scanf("%i", &PontosTuriscticosB, "\n");
+    scanf("%s", estadoB);
+    printf("\n Digite a letra do Estado mais um numero de 01 a 04. Exemplo F03: ");
+    scanf("%s", codigoB);
+    printf("\n Digite o nome da Cidade: ");
+    scanf("%s", nomeCidadeB);
+    printf("\n Digite o numero TOTAL de habitantes na cidade: ");
+    scanf("%i", &populacaoB);
+    printf("\n Digite a Area em KM2; Exemplo 1528.76: ");
+    scanf("%f", &kmB);
+    printf("\n Digite o PIB (Produto Interno Bruto) da cidade em Bilhoes; Exemplo 187.87: ");
+    scanf("%f", &pibB);
+    printf("\n Digite a quantidade de Pontos Turisticos a cidade possui: ");
+    scanf("%i", &PontosTuriscticosB);
+
+      // Calculo da Densidade e do PIB per Capita
+
+    densidadePopulacionalB = (populacaoB / kmB);
+    pibPerCapitaB = (pibB / populacaoB);
 
     // Leitura da Segunda Carta Inserida
-    printf("\n\n Carta 2 \n");
+    printf("\n\n\n Carta 2 \n");
     printf("Estado: %s \n", estadoB);
     printf("Código: %s \n", codigoB);
     printf("Nome da Cidade: %s \n", nomeCidadeB);
@@ -81,5 +93,10 @@ int main() {
     printf("Área: %f Km2 \n", kmB);
     printf("PIB: %f Bilhões de Reais \n", pibB);
     printf("Numero de Pontos Turisticos: %i \n", PontosTuriscticosB);
-    return 0;
+    printf("Densidade Populacional: %f \n", densidadePopulacionalB);
+    printf("PIB per Capita: %f \n", pibPerCapitaB);
+
+
+
+
 }
